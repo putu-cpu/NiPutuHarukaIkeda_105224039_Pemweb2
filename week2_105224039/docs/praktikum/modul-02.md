@@ -1,7 +1,7 @@
 # Dokumen Teknis Modul 2 — HTML Semantik, Tailwind CSS, dan Aksesibilitas
 
 Nama/NIM : 105224039
-Repositori :
+Repositori : https://github.com/putu-cpu/NiPutuHarukaIkeda_105224039_Pemweb2.git
 
 ## 1. Struktur Semantik
 
@@ -15,7 +15,7 @@ Repositori :
 - **Aksesibilitas Navigasi (`<a>` Skip Link)**: Memiliki elemen `<a href="#konten" className="sr-only focus:not-sr-only focus:p-2">` dengan teks "Lewati ke konten utama". Tautan ini disembunyikan secara visual dan baru muncul ketika menerima fokus papan ketik. Fungsinya agar pengguna papan ketik (*keyboard*) dan pembaca layar dapat melompati menu navigasi dan langsung menuju ke area konten utama.
 - **`<header>` (banner)**: Berperan sebagai kepala halaman yang membungkus area navigasi atas.
 - **`<nav>` (navigation)**: Membungkus menu navigasi utama yang berisi logo serta daftar tautan navigasi (`<ul>` dan `<li>`).
-- **`<main id="konten">` (main)**: Membungkus seluruh isi konten utama halaman[cite: 13, 17]. Hanya terdapat satu elemen `<main>` pada halaman.
+- **`<main id="konten">` (main)**: Membungkus seluruh isi konten utama halaman. Hanya terdapat satu elemen `<main>` pada halaman.
 - **`<section>` (region)**: Setiap bagian halaman dibungkus menggunakan tag `<section>` dan diberi nama terprogram via atribut `aria-labelledby` yang merujuk pada ID judul bagian tersebut:
   - `aria-labelledby="judul-utama"` untuk bagian nilai utama produk.
   - `aria-labelledby="judul-fitur"` untuk bagian daftar fitur utama.
@@ -101,10 +101,10 @@ Penerapan tata letak menggunakan pendekatan *mobile-first* bawaan Tailwind CSS v
 
 ## 4. Kendala dan Penyelesaian
 
-- **Kendala 1: Bahasa dokumen bawaan Next.js masih Bahasa Inggris (`lang="en"`)**[cite: 17]
+- **Kendala 1: Bahasa dokumen bawaan Next.js masih Bahasa Inggris (`lang="en"`)**
   - **Penyelesaian**: Mengubah atribut `lang="en"` menjadi `lang="id"` pada berkas `app/layout.tsx` agar pembaca layar (*screen reader*) dapat melafalkan teks bahasa Indonesia dengan artikulasi yang tepat.
 
-- **Kendala 2: Peringatan kontras warna (*Contrast Ratio*) pada audit Lighthouse**[cite: 27]
+- **Kendala 2: Peringatan kontras warna (*Contrast Ratio*) pada audit Lighthouse**
   - **Penyelesaian**: Menyesuaikan warna teks deskripsi dari warna abu-abu muda yang samar menjadi `text-gray-700` pada `app/page.tsx` sehingga rasio kontras warna terhadap latar belakang memenuhi standar WCAG 2.2 minimal 4,5:1.
 
 - **Kendala 3: Penataan tata letak dua kolom (*main* dan *aside*) di layar ponsel (360 px)**
